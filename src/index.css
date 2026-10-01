@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-script: "Alex Brush", cursive;
+
+  --color-brand-pink: #D81B60;
+  --color-brand-pink-hover: #C2185B;
+  --color-brand-pink-dark: #AD1457;
+  --color-brand-pink-light: #FCE8EE;
+  --color-brand-pink-subtle: #FFF0F5;
+  --color-brand-wine: #5E1228;
+  --color-brand-wine-dark: #420C1C;
+  --color-brand-cream: #FAF6F5;
+  --color-brand-dark: #231218;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: #2D1520;
+    background-color: #FCF9F9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom luxury subtle glows and borders */
+.luxury-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.luxury-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(216, 27, 96, 0.08);
+  box-shadow: 0 10px 30px -5px rgba(94, 18, 40, 0.05), 0 4px 10px -2px rgba(94, 18, 40, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -8px rgba(216, 27, 96, 0.12), 0 8px 16px -4px rgba(94, 18, 40, 0.04);
+  border-color: rgba(216, 27, 96, 0.2);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Floating animation */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(6px) rotate(-2deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 7s ease-in-out infinite;
+}
